@@ -36,4 +36,40 @@
   @endforeach
 
 </table>
+
+
+
+<!-- new -->
+<!-- <table>
+  <label style="font-size: 30px; ">Add Product</label>
+         
+          <tr>
+            <th>Product Code</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Amount</th>
+            <th>Add</th>
+          </tr>
+          <tr>
+            <td><input class="form-control" type="text" class="form-control" id="procode" name="productcode" placeholder="Product Code" required></td>
+
+            <td><input class="form-control" type="text" class="form-control" id="pname" name="productname" placeholder="Product Name" required></td>
+
+            <td><input class="form-control" type="text" class="form-control" id="price" name="price" placeholder="Price" required></td>
+
+            <td><input class="form-control" type="number" class="form-control" id="qty" name="quantity" placeholder="Quantity" required></td>
+
+            <td><input class="form-control" type="text" class="form-control" id="total" name="total" placeholder="Total" required></td>
+
+            <td><button type="submit" class="btn btn-primary" name="add">Add</button></td>
+          </tr>
+        </table> -->
+
+
+
+
+
+
+        
 @endsection

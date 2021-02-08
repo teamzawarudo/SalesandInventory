@@ -73,9 +73,20 @@
                     <a class="nav-link" href='transaction'>Transaction</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href='home'>Logout</a>
+                    <a class="nav-link" href='login'>Logout</a>
                   </li>
                 </ul> 
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                </div>
             </nav>
 
             <section>

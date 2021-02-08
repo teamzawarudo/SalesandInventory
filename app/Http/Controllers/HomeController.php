@@ -7,61 +7,32 @@ use DB;
 
 class HomeController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
-    public function home(){
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
         return view('home');
     }
 
-    // public function login(){
-    //     return view('login');
-    // }
-
-    // public function loginUser(Request $request){
-
-    //     $username = $request->input('username');
-    //     $password = $request->input('password');
-        
-
-    //     $select = DB::SELECT("SELECT * FROM useraccounts WHERE username = username and password = password", [$username, $password]);
-
-    //     if($select == 0){
-    //        return view('login'); 
-    //     }
-        
-    // }
-
-    // public function register(){
-    //     return view('register');
-    // }
-
-    // public function registerUser(Request $request){
-
-    //     $firstname = $request->input('firstname');
-    //     $lastname = $request->input('lastname');
-    //     $username = $request->input('username');
-    //     $password = $request->input('password');
-    //     $msg = "Please try again";
-
-    //     $insert = DB::INSERT("INSERT INTO useraccounts(firstname, lastname, username, password) VALUES (?,?,?,?)", [$firstname, $lastname, $username, $password]);
-
-    //     if($insert == TRUE){
-    //         return view('login');
-    //     }else{
-    //         $msg;
-    //     }
+    
 
 
-        
-    // }
-
-
-
-
-
-
-
-
-
+    public function homepage(){
+        return view('homepage');
+    }
 
 
     //viewing the product page
@@ -70,7 +41,7 @@ class HomeController extends Controller
             $data = DB::SELECT("SELECT * FROM systemtable");
         
 
-    	return view('product', ['products' => $data]);
+        return view('product', ['products' => $data]);
     }
 
     public function addproduct(){
@@ -138,27 +109,14 @@ class HomeController extends Controller
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public function inventory(){
         $data = DB::SELECT("SELECT * FROM systemtable");
-    	return view('inventory', ['products' => $data]);
+        return view('inventory', ['products' => $data]);
     }
     
     public function transaction(){
         $data = DB::SELECT("SELECT * FROM systemtable");
         return view('transaction', ['products' => $data]);
     }
+
 }

@@ -27,7 +27,7 @@ use App\Http\Controllers\HomeController;
 
 
 //home
-Route::get('/home',[HomeController::class, 'home']);
+Route::get('/homepage',[HomeController::class, 'homepage']);
 
 
 
@@ -37,6 +37,8 @@ Route::get('/product',[HomeController::class, 'product']);
 
 //inserting product
 Route::get('/addproduct',[HomeController::class, 'addproduct']);
+
+Route::post('/product',[GetProductCode::class, 'getProductCode']);
 
 Route::post('/product', [HomeController::class, 'insertProduct']);
 
@@ -60,15 +62,25 @@ Route::get('/inventory/{id}', [HomeController::class, 'deleteProduct']);
 
 
 
-
-
-
-
-
-
-
-
-
-
 //transaction
 Route::get('/transaction',[HomeController::class, 'transaction']);
+
+
+
+
+
+
+
+
+
+//log
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+
+Route::get('/auth/login', [App\Http\Controllers\HomeController::class, 'index']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

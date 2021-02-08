@@ -28,5 +28,7 @@
 
   @endforeach
 
+
 </table>
+<a href="/homepage"><button type="button" class="btn btn-secondary">Close</button></a>
 @endsection
